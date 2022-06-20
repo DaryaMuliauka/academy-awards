@@ -2,6 +2,8 @@ package com.muliavka.academyawards.service.omdb.mapper;
 
 import com.muliavka.academyawards.service.movie.dto.MovieInfoForUpdateDto;
 import com.muliavka.academyawards.service.omdb.dto.OmdbInfoDto;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -10,6 +12,8 @@ import static com.muliavka.academyawards.util.LoggerUtil.*;
 import static org.apache.logging.log4j.util.Strings.isNotBlank;
 
 @Service
+@RequiredArgsConstructor
+@Slf4j
 public class OmdbDataToDataBaseDataMapperImpl implements OmdbDataToDataBaseDataMapper {
 
     private static final Logger logger = LoggerFactory.getLogger(OmdbDataToDataBaseDataMapperImpl.class);

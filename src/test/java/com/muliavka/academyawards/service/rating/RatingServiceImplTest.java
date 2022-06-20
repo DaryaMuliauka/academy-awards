@@ -1,9 +1,9 @@
 package com.muliavka.academyawards.service.rating;
 
-import com.muliavka.academyawards.dao.entity.projection.RatingViewProjection;
-import com.muliavka.academyawards.dao.repository.RatingRepository;
+import com.muliavka.academyawards.entity.projection.RatingViewProjection;
+import com.muliavka.academyawards.repository.RatingRepository;
 import com.muliavka.academyawards.data.RatingViewProjectionImp;
-import com.muliavka.academyawards.web.api.rating.RatingDto;
+import com.muliavka.academyawards.dto.rating.RatingDto;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

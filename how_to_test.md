@@ -32,7 +32,7 @@ example response body from /authenticate
 Console H2 available from url http://localhost:8080/h2-console/
 
 These are login settings.
-![img.png](src/main/resources/static/img/H2_console.png)
+![img.png](img/H2_console.png)
 
 There you can get acquainted with the structure of tables and data
 

@@ -1,6 +1,8 @@
 package com.muliavka.academyawards.service.omdb.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
@@ -9,57 +11,19 @@ import java.util.StringJoiner;
 /**
  * Dto with data from OMDB Service
  */
+@Data
 public class OmdbInfoDto implements Serializable {
 
-    /**
-     * Movie title
-     */
+    @ApiModelProperty(name = "Movie title", required = true)
     @NotBlank
     @JsonProperty("Title")
     private String title;
 
-    /**
-     * Movie box office
-     */
+    @ApiModelProperty(name = "Movie box office", required = true)
     @JsonProperty("BoxOffice")
     private String boxOffice;
 
-    /**
-     * Movie Imdb rating
-     */
+    @ApiModelProperty(name = "Movie Imdb rating", required = true)
     @JsonProperty("imdbRating")
     private String imdbRating;
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getBoxOffice() {
-        return boxOffice;
-    }
-
-    public void setBoxOffice(String boxOffice) {
-        this.boxOffice = boxOffice;
-    }
-
-    public String getImdbRating() {
-        return imdbRating;
-    }
-
-    public void setImdbRating(String imdbRating) {
-        this.imdbRating = imdbRating;
-    }
-
-    @Override
-    public String toString() {
-        return new StringJoiner(",", OmdbInfoDto.class.getName() + "{", "}")
-                .add("title = '" + title + "'")
-                .add("boxOffice = '" + boxOffice + "'")
-                .add("imdbRating = '" + imdbRating + "'")
-                .toString();
-    }
 }

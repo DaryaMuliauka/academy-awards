@@ -1,6 +1,6 @@
 package com.muliavka.academyawards.data;
 
-import com.muliavka.academyawards.dao.entity.projection.RatingViewProjection;
+import com.muliavka.academyawards.entity.projection.RatingViewProjection;
 
 public class RatingViewProjectionImp implements RatingViewProjection {
     @Override

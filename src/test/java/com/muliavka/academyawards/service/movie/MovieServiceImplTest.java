@@ -1,7 +1,7 @@
 package com.muliavka.academyawards.service.movie;
 
-import com.muliavka.academyawards.dao.entity.projection.MovieShortViewProjection;
-import com.muliavka.academyawards.dao.repository.MovieRepository;
+import com.muliavka.academyawards.entity.projection.MovieShortViewProjection;
+import com.muliavka.academyawards.repository.MovieRepository;
 import com.muliavka.academyawards.service.movie.dto.MovieInfoForUpdateDto;
 import org.junit.Before;
 import org.junit.Test;

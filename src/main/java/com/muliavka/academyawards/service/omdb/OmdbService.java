@@ -1,6 +1,6 @@
 package com.muliavka.academyawards.service.omdb;
 
-import com.muliavka.academyawards.dao.entity.MovieEntity;
+import com.muliavka.academyawards.entity.Movie;
 import com.muliavka.academyawards.service.movie.dto.MovieInfoForUpdateDto;
 
 import java.util.List;
@@ -16,7 +16,7 @@ public interface OmdbService {
      * @return data for update MovieAward entity with id and fields for update
      *
      * @see MovieInfoForUpdateDto
-     * @see MovieEntity
+     * @see Movie
      */
     List<MovieInfoForUpdateDto> getOmdbDataForUpdateMovie(Map<Long, String> movieIdNomineeMap);
 }

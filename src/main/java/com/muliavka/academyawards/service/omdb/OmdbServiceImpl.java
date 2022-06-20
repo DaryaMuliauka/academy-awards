@@ -3,6 +3,8 @@ package com.muliavka.academyawards.service.omdb;
 import com.muliavka.academyawards.service.movie.dto.MovieInfoForUpdateDto;
 import com.muliavka.academyawards.service.omdb.dto.OmdbInfoDto;
 import com.muliavka.academyawards.service.omdb.mapper.OmdbDataToDataBaseDataMapper;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,18 +22,14 @@ import static com.muliavka.academyawards.util.LoggerUtil.logRequest;
 import static org.hibernate.internal.util.collections.CollectionHelper.isNotEmpty;
 
 @Service
+@RequiredArgsConstructor
+@Slf4j
 public class OmdbServiceImpl implements OmdbService {
 
     private static final Logger logger = LoggerFactory.getLogger(OmdbServiceImpl.class);
 
     private final OmdbDataToDataBaseDataMapper omdbMapper;
     private final RestTemplate restTemplate;
-
-    @Autowired
-    public OmdbServiceImpl(OmdbDataToDataBaseDataMapper omdbMapper, RestTemplate restTemplate) {
-        this.omdbMapper = omdbMapper;
-        this.restTemplate = restTemplate;
-    }
 
     @Value("${omdb.api.key}")
     private String apiKey;

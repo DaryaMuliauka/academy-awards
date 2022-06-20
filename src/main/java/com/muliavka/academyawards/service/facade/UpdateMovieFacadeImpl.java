@@ -1,9 +1,11 @@
 package com.muliavka.academyawards.service.facade;
 
-import com.muliavka.academyawards.dao.entity.projection.MovieOmdbProjection;
+import com.muliavka.academyawards.entity.projection.MovieOmdbProjection;
 import com.muliavka.academyawards.service.movie.MovieService;
 import com.muliavka.academyawards.service.movie.dto.MovieInfoForUpdateDto;
 import com.muliavka.academyawards.service.omdb.OmdbService;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,18 +21,14 @@ import static com.muliavka.academyawards.util.LoggerUtil.logRequest;
 import static org.hibernate.internal.util.collections.CollectionHelper.isNotEmpty;
 
 @Service
+@RequiredArgsConstructor
+@Slf4j
 public class UpdateMovieFacadeImpl implements UpdateMovieFacade {
 
     private static final Logger logger = LoggerFactory.getLogger(UpdateMovieFacadeImpl.class);
 
     private final MovieService movieService;
     private final OmdbService omdbService;
-
-    @Autowired
-    public UpdateMovieFacadeImpl(MovieService movieService, OmdbService omdbService) {
-        this.movieService = movieService;
-        this.omdbService = omdbService;
-    }
 
     @Override
     public void updateMovieFromImdb() {

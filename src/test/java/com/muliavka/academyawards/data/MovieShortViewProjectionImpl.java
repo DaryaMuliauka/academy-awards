@@ -1,6 +1,6 @@
 package com.muliavka.academyawards.data;
 
-import com.muliavka.academyawards.dao.entity.projection.MovieShortViewProjection;
+import com.muliavka.academyawards.entity.projection.MovieShortViewProjection;
 
 public class MovieShortViewProjectionImpl implements MovieShortViewProjection {
 

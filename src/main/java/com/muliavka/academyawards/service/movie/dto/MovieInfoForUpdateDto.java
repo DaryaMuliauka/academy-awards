@@ -1,58 +1,29 @@
 package com.muliavka.academyawards.service.movie.dto;
 
+import io.swagger.annotations.ApiModelProperty;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.io.Serializable;
 import java.util.StringJoiner;
 
 /**
- * Dto with data for update MovieEntity
+ * Dto with data for update Movie
  */
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class MovieInfoForUpdateDto implements Serializable {
 
-    /**
-     * MovieEntity id
-     */
+    @ApiModelProperty(name = "Movie id", required = true)
     private Long movieId;
 
-    /**
-     * Movie box office
-     */
+    @ApiModelProperty(name = "Movie box office", required = true)
     private Long boxOffice;
 
-    /**
-     * Omdb rating
-     */
+    @ApiModelProperty(name = "Omdb rating", required = true)
     private Double imdbRating;
-
-    public Long getMovieId() {
-        return movieId;
-    }
-
-    public void setMovieId(Long movieId) {
-        this.movieId = movieId;
-    }
-
-    public Long getBoxOffice() {
-        return boxOffice;
-    }
-
-    public void setBoxOffice(Long boxOffice) {
-        this.boxOffice = boxOffice;
-    }
-
-    public Double getImdbRating() {
-        return imdbRating;
-    }
-
-    public void setImdbRating(Double imdbRating) {
-        this.imdbRating = imdbRating;
-    }
-
-    @Override
-    public String toString() {
-        return new StringJoiner(",", MovieInfoForUpdateDto.class.getName() + "{", "}")
-                .add("movieId = '" + movieId + "'")
-                .add("boxOffice = '" + boxOffice + "'")
-                .add("imdbRating = '" + imdbRating + "'")
-                .toString();
-    }
 }

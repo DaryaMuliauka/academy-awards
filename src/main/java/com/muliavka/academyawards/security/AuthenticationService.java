@@ -2,7 +2,7 @@ package com.muliavka.academyawards.security;
 
 import com.muliavka.academyawards.security.jwt.JwtToken;
 import com.muliavka.academyawards.security.jwt.JwtTokenProvider;
-import com.muliavka.academyawards.web.api.authentication.AuthenticationRequest;
+import com.muliavka.academyawards.dto.authentication.AuthenticationRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

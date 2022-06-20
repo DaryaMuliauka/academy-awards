@@ -1,7 +1,7 @@
 package com.muliavka.academyawards.security;
 
-import com.muliavka.academyawards.dao.entity.UserEntity;
-import com.muliavka.academyawards.dao.repository.UserRepository;
+import com.muliavka.academyawards.entity.UserEntity;
+import com.muliavka.academyawards.repository.UserRepository;
 import com.muliavka.academyawards.security.dto.CustomUser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

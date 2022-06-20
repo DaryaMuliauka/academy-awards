@@ -1,8 +1,8 @@
 package com.muliavka.academyawards.service.movie;
 
-import com.muliavka.academyawards.dao.entity.MovieEntity;
-import com.muliavka.academyawards.dao.entity.projection.MovieOmdbProjection;
-import com.muliavka.academyawards.dao.entity.projection.MovieShortViewProjection;
+import com.muliavka.academyawards.entity.Movie;
+import com.muliavka.academyawards.entity.projection.MovieOmdbProjection;
+import com.muliavka.academyawards.entity.projection.MovieShortViewProjection;
 import com.muliavka.academyawards.service.movie.dto.MovieInfoForUpdateDto;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Sort;
@@ -19,10 +19,10 @@ public interface MovieService {
      * @param pageNumber number of page
      * @param pageSize number of element's per page
      * @param sortDirection DESK, ASK
-     * @param sortFields can be any fields from MovieEntity
-     * @return View with short, main information about MovieEntity
+     * @param sortFields can be any fields from Movie
+     * @return View with short, main information about Movie
      *
-     * @see MovieEntity
+     * @see Movie
      * @see MovieShortViewProjection
      */
     Page<MovieShortViewProjection> getMoviesShortInfoList(int pageNumber,
@@ -36,7 +36,7 @@ public interface MovieService {
      * @return MovieOmdbProjection
      *
      * @see MovieOmdbProjection
-     * @see MovieEntity
+     * @see Movie
      */
     List<MovieOmdbProjection> getAllMovieIdAndTitle();
 
@@ -46,7 +46,7 @@ public interface MovieService {
      * @param info data for update
      *
      * @see MovieInfoForUpdateDto
-     * @see MovieEntity
+     * @see Movie
      */
     void updateMovieData(MovieInfoForUpdateDto info);
 }

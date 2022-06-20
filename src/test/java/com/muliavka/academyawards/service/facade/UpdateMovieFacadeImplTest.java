@@ -1,6 +1,6 @@
 package com.muliavka.academyawards.service.facade;
 
-import com.muliavka.academyawards.dao.entity.projection.MovieOmdbProjection;
+import com.muliavka.academyawards.entity.projection.MovieOmdbProjection;
 import com.muliavka.academyawards.data.MovieOmdbProjectionImpl;
 import com.muliavka.academyawards.service.movie.MovieServiceImpl;
 import com.muliavka.academyawards.service.movie.dto.MovieInfoForUpdateDto;

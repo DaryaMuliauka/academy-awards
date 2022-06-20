@@ -1,6 +1,6 @@
 package com.muliavka.academyawards.data;
 
-import com.muliavka.academyawards.dao.entity.projection.MovieOmdbProjection;
+import com.muliavka.academyawards.entity.projection.MovieOmdbProjection;
 
 public class MovieOmdbProjectionImpl implements MovieOmdbProjection {
 

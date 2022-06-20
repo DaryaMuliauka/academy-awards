@@ -11,10 +11,10 @@ not very important for goals of test-task:
 
 ### todo
 
-- return in response fail tetle list
+- return in response fail title list
 - Logging with AOP or BPP
 - call update data from OMDB API from some scheduler (Once a day/hour for example)
-- It will be match better if request's to OMDB API will sends by omdbId, not tittle
+- It will be much better if requests to OMDB API will send by omdbId, not tittle
 - Not embedded data base
 - App profiles (dev/prod)
 - CI/CD with Docker, Kubernetes/OpenShift

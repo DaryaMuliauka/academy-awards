@@ -1,9 +1,11 @@
 package com.muliavka.academyawards.service.movie;
 
-import com.muliavka.academyawards.dao.entity.projection.MovieOmdbProjection;
-import com.muliavka.academyawards.dao.entity.projection.MovieShortViewProjection;
-import com.muliavka.academyawards.dao.repository.MovieRepository;
+import com.muliavka.academyawards.entity.projection.MovieOmdbProjection;
+import com.muliavka.academyawards.entity.projection.MovieShortViewProjection;
+import com.muliavka.academyawards.repository.MovieRepository;
 import com.muliavka.academyawards.service.movie.dto.MovieInfoForUpdateDto;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,16 +22,11 @@ import java.util.List;
 import static com.muliavka.academyawards.util.LoggerUtil.logRequest;
 
 @Service
+@RequiredArgsConstructor
+@Slf4j
 public class MovieServiceImpl implements MovieService {
 
-    private static final Logger logger = LoggerFactory.getLogger(MovieServiceImpl.class);
-
     private final MovieRepository movieRepository;
-
-    @Autowired
-    public MovieServiceImpl(MovieRepository movieRepository) {
-        this.movieRepository = movieRepository;
-    }
 
     @Override
     @Transactional(readOnly = true)
@@ -37,8 +34,6 @@ public class MovieServiceImpl implements MovieService {
                                                                  int pageSize,
                                                                  Sort.Direction sortDirection,
                                                                  String[] sortFields) {
-        final String methodName = "getMoviesShortInfoList";
-        logRequest(logger, methodName, pageNumber, pageSize, sortDirection, Arrays.toString(sortFields));
 
         final Sort sort = Sort.by(sortDirection, sortFields);
         final PageRequest pageRequest = PageRequest.of(pageNumber, pageSize,  sort);
@@ -54,8 +49,6 @@ public class MovieServiceImpl implements MovieService {
     @Override
     @Transactional(propagation = Propagation.REQUIRES_NEW)
     public void updateMovieData(MovieInfoForUpdateDto info) {
-        final String methodName = "updateMovieAwardData";
-        logRequest(logger, methodName, info);
 
         final Long boxOffice = info.getBoxOffice();
         final Double imdbRating = info.getImdbRating();
